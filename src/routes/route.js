@@ -11,7 +11,7 @@ router.post("/createAuthors", authorController.createAuthors)
 router.post("/loginAuthor", authorController.loginAuthor)
 
 // PHASE 1
-// router.post("/createBlog", blogController.Blogs);
+router.post("/createBlog", blogController.Blogs);
 // router.post("/createAuthor", authorController.createAuthors)
 // router.get("/getBlogs", blogController.getBlogdata)
 // router.put("/updateBlogs/:blogId", blogController.updateBlogs)
@@ -28,9 +28,9 @@ router.post("/loginAuthor", authorController.loginAuthor)
 // router.delete("/deleteBlogs", middleware.authenticate, blogController.deleteBlogByQuery)
 // router.post("/loginAuthor", middleware.authenticate, authorController.loginAuthor)
 
-// AUTHORISATION
-router.put("/updateBlogs/:blogId", middleware.authenticate, middleware.authorisation, blogController.updateBlogs)
-router.delete("/deleteBlogs/:blogId", middleware.authenticate, middleware.authorisation, blogController.deleteBlogs)
-router.delete("/deleteBlogs", middleware.authenticate, middleware.authorisation, blogController.deleteBlogByQuery)
+// // AUTHORISATION
+// router.put("/updateBlogs/:blogId", middleware.authenticate, middleware.authorisation, blogController.updateBlogs)
+// router.delete("/deleteBlogs/:blogId", middleware.authenticate, middleware.authorisation, blogController.deleteBlogs)
+// router.delete("/deleteBlogs", middleware.authenticate, middleware.authorisation, blogController.deleteBlogByQuery)
 
 module.exports = router;

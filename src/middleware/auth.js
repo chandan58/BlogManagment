@@ -1,8 +1,6 @@
 const jwt = require("jsonwebtoken")
 const BlogModel = require("../models/blogsModel")
 const authenticate = function(req, res, next) {
-    //check the token in request header
-    //validate this token
 
     let token = req.headers["x-api-key"]
     if (!token) return res.send({ status: false, msg: "token must be present in the request header" })
@@ -38,32 +36,9 @@ const authorisation = async function(req, res, next) {
     }
 }
 
-module.exports.authenticate = authenticate;
-module.exports.authorisation = authorisation;
 
 
-// const jwt = require("jsonwebtoken");
-// const BlogModel = require("../models/blogsModel");
 
-// const mid3 = async function(req, res, next) {
-//     try {
-//         //Authentication
-//         const token = req.headers["x-api-key"];
-//         if (!token) {
-//             return res
-//                 .status(401)
-//                 .send({ status: false, msg: "token must be present" });
-//         }
 
-//         //Authorization
-//         var decodedToken = jwt.verify(token, "backend-project");
-
-//         next();
-
-//         req.user = decodedToken.authorId;
-//     } catch (err) {
-//         res.status(500).send({ status: false, msg: err.message });
-//     }
-// };
-
-// module.exports = { mid3 };
+module.exports.authenticate = authenticate
+module.exports.authorisation = authorisation
